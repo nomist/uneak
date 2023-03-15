@@ -33,32 +33,36 @@
 }
 
 .logo {
-    display: inline-block;
-    background-image: url(/img/logo.png);
     width: 238px;
     height: 24px;
+    object-fit: contain;
 }
 
 .nav-items-list {
+    list-style: none;
     line-height: 110px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: auto;
+    margin: 0;
 }
 
-.nav-item {
-    padding: 0 10px 0;
+.nav-item a {
     text-decoration: none;
-    font-family: Tomorrow, Arial, Helvetica, sans-serif;
-    font-size: 20px;
     color: #353E50;
-    text-transform: uppercase;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.nav-item {
+    padding: 0 10px 0;
+    font-family: Tomorrow, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .material-symbols-outlined {
@@ -69,11 +73,9 @@
     padding: 10px;
 }
 
-.nav-item:hover {
-    color: #879C00;
-}
-
-.nav-item:hover .material-symbols-outlined {
+.nav-item a:hover,
+.nav-item:hover .material-symbols-outlined,
+.floating-button:hover {
     color: #879C00;
 }
 
@@ -108,6 +110,8 @@
     position: absolute;
     width: 1029px;
     height: 3px;
+    margin: 0;
+    border: none;
     background-color: #484C32;
 }
 
@@ -133,10 +137,6 @@
     position: absolute;
     left: 62px;
     bottom: 60px;
-}
-
-.floating-button:hover {
-    color: #879C00;
 }
 
 .background {
@@ -206,7 +206,8 @@
 }
 
 .next-step {
-    height: 862px;
+    padding-top: 250px;
+    padding-bottom: 475px;
     background-image: url(/img/bg-next-step.jpg);
 }
 
@@ -223,11 +224,12 @@
 }
 
 .process-about {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 1039px;
-    margin: 0 auto;
+    width: 100%;
+    padding: 0 135px;
 }
 
 .product-img-container {
@@ -239,7 +241,7 @@
     width: 100%;
     height: 375px;
     margin-bottom: 2px;
-    filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198)) drop-shadow(0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275)) drop-shadow(0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035)) drop-shadow(0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725)) drop-shadow(0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802));
+    filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 42px 33px rgba(0, 0, 0, 0.05)) drop-shadow(0px 22px 18px rgba(0, 0, 0, 0.04)) drop-shadow(0px 12px 10px rgba(0, 0, 0, 0.035)) drop-shadow(0px 7px 5px rgba(0, 0, 0, 0.03)) drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.02));
     position: relative;
     z-index: 1;
 }
@@ -357,7 +359,8 @@
 
 .message {
     background-image: url(/img/bg-message.png);
-    height: 862px;
+    padding-top: 370px;
+    padding-bottom: 405px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -431,22 +434,34 @@
 }
 
 .input-container {
-    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-footer-item a {
+    text-decoration: none;
+    color: #353E50;
 }
 
 .nav-footer-item {
-    text-decoration: none;
+    list-style: none;
     font-family: Sintony, Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 1;
     padding: 5px;
-    color: #353E50;
     text-transform: uppercase;
 }
 
 .nav-footer-item:hover {
     color: #879C00;
+}
+
+.nav-footer ul {
+    padding: 0;
+    margin: 0;
 }
 
 .nav-footer {
@@ -458,21 +473,27 @@
     margin: 42px 0 0 -5px;
 }
 
-.nav-footer-additional {
+.nav-footer-additional ul {
     padding: 60px 0;
+    margin: 0;
     text-align: center;
     width: 100%;
 }
 
-.nav-footer-additional-item {
-    padding: 6px;
+.nav-footer-additional-item a {
     text-decoration: none;
+    color: #353E50;
+}
+
+.nav-footer-additional-item {
+    display: inline;
+    list-style: none;
+    padding: 6px;
     font-family: Sintony, Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
     padding: 5px;
-    color: #353E50;
 }
 
 .nav-footer-additional-item:hover {
